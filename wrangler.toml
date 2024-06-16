@@ -1,6 +1,9 @@
 name = "cloudflare-docker-proxy"
 compatibility_date = "2023-12-01"
 
+[vars]
+SHOW_ROUTE = 0
+
 [dev]
 ip = "0.0.0.0"
 port = 8787
@@ -9,6 +12,7 @@ local_protocol = "http"
 [env.dev.vars]
 MODE = "debug"
 TARGET_UPSTREAM = "https://registry-1.docker.io"
+SHOW_ROUTE = 1
 
 [env.production]
 name = "cloudflare-docker-proxy"
