@@ -36,9 +36,9 @@ async function handleRequest(request) {
   const url = new URL(request.url);
   const upstream = routeByHosts(url.hostname);
   if (upstream === "") {
-    // show route info, noly "MODE == debug"
+    // show route info, noly "SHOW_ROUTE == true"
     let body_data = ""
-    if (MODE == "debug") {
+    if (SHOW_ROUTE) {
       body_data = JSON.stringify({
         routes: routes,
       })
